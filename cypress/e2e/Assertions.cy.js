@@ -70,18 +70,18 @@ describe("Explicit Assertions", ()=>{
         cy.get("input[placeholder='Password']").type("admin123")
         cy.get("button[type='submit']").click()
 
-        let expName="Mike Ross";
+        let expName="Mike Tyson";
 
         cy.get(".oxd-userdropdown-name").then((x)=>{
             let actName = x.text()
 
             //BDD Style
             expect(actName).to.equal(expName)
-            expect(actName).to.not.equal("Ross")
+            expect(actName).to.not.equal("Tyson")
 
             //TDD Style
             assert.equal(actName,expName)
-            assert.notEqual(actName,"Ross")
+            assert.notEqual(actName,"Tyson")
         })
      
     })
